@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: 55vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75rem;
+  height: 60vh;
+}
+.container h5 {
+  color: hsl(0deg, 100%, 66%);
+  display: none;
+}
+.container .levo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.container .levo .gornja, .container .levo .donja {
+  width: 440px;
+  height: 240px;
+  border-radius: 10px;
+  position: absolute;
+}
+.container .levo .gornja {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-items: center;
+  background-image: url("images/bg-card-front.png");
+  margin-bottom: 3%;
+  left: 10%;
+  top: 20%;
+  color: white;
+  padding: 20px;
+}
+.container .levo .gornja .ime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.container .levo .gornja .ime .name {
+  margin-right: 160px;
+}
+.container .levo .gornja h1, .container .levo .gornja h3 {
+  font-weight: lighter;
+}
+.container .levo .gornja .circles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+.container .levo .gornja .circles .veliki {
+  border-radius: 50%;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+.container .levo .gornja .circles .mali {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.container .levo .donja {
+  z-index: 2;
+  background-image: url("images/bg-card-back.png");
+  left: 17%;
+  top: 50%;
+}
+.container .levo .donja span {
+  position: absolute;
+  left: 80%;
+  top: 45%;
+  color: white;
+}
+.container .complete, .container .desno {
+  width: 45%;
+}
+.container button {
+  background-color: hsl(278deg, 68%, 11%);
+  color: white;
+  width: 100%;
+  height: 60px;
+  margin-top: 7%;
+}
+.container button h2 {
+  letter-spacing: 0.1rem;
+}
+.container input, .container button {
+  border-radius: 10px;
+}
+.container .desno {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .desno .isti {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .desno .isti .exp, .container .desno .isti .cvc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .desno .isti .mmyy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .desno .isti .mmyy input {
+  width: 75px;
+  margin-right: 15px;
+}
+.container .desno .isti .cvc input {
+  width: 320px;
+}
+.container .desno .isti .cvc #cvcid {
+  margin-bottom: 3%;
+}
+.container .desno input {
+  width: 100%;
+  height: 50px;
+  padding-left: 3%;
+  font-size: 15pt;
+  border: 1px solid hsl(270deg, 3%, 87%);
+}
+.container .desno input:active {
+  border-color: hsl(249deg, 99%, 64%);
+}
+.container .desno input:hover {
+  cursor: pointer;
+}
+.container .desno label {
+  margin-bottom: 2%;
+  color: hsl(278deg, 68%, 11%);
+}
+.container .complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .complete img {
+  margin-left: 100%;
+}
+.container .complete h1 {
+  color: hsl(278deg, 68%, 11%);
+  font-weight: 300;
+  letter-spacing: 0.4rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 16vw;
+  margin-left: 63%;
+}
+.container .complete h3 {
+  color: hsl(279deg, 6%, 55%);
+  font-weight: 100;
+  margin-bottom: 20px;
+  width: 19vw;
+  margin-left: 50%;
+}
+.container .drugiDesno {
+  display: none;
+  width: 40%;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .levo, .container .desno {
+    width: 90%;
+  }
+  .container .levo {
+    height: 40%;
+  }
+  .container .levo .gornja {
+    z-index: 2;
+    margin-left: -22%;
+    margin-top: -18%;
+  }
+  .container .levo .donja {
+    margin-top: -110%;
+    margin-left: -15%;
+    z-index: 1;
+  }
+  .container .desno {
+    height: 60%;
+    margin-top: 70%;
+  }
+  .container .drugiDesno {
+    margin-top: 70%;
+    width: 100%;
+  }
+  .container .drugiDesno .complete {
+    width: 100%;
+  }
+  .container .drugiDesno .complete img {
+    margin-left: 40%;
+  }
+  .container .drugiDesno .complete h1 {
+    width: 100%;
+    margin-left: 15%;
+  }
+  .container .drugiDesno .complete h3 {
+    width: 100%;
+    margin-left: 10%;
+  }
+  body {
+    background-image: url("images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100vw;
+  }
+  .gornja, .donja {
+    transform: scale(0.7);
+    width: 340px;
+    height: 140px;
+    border-radius: 10px;
+    position: absolute;
+  }
+  .exp {
+    width: 50%;
+  }
+  .cvc {
+    width: 50%;
+  }
+  .cvc input {
+    margin-left: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */

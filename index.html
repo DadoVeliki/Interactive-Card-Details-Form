@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>David Trstenjak | Interactive card details form</title>
+
+</head>
+<body>
+  <div class="container">
+    <div class="levo">
+      <div class="gornja">
+        <div class="circles">
+          <div class="veliki"></div>
+          <div class="mali"></div>
+        </div>
+
+        <h1>0000 0000 0000 0000</h1>
+
+        <div class="ime">
+        <h3 class="name">JANE APPLESEED</h3>
+        <h3 class="year">00/00</h3>
+      </div>
+      </div>
+      
+      <div class="donja"><span>000</span></div>
+  
+</div>
+    <form class="desno">
+
+  <label>Cardholder Name</label>
+  <input placeholder="e.g. Jane Appleseed" type="name">
+  <h5 style="margin-top: 1%;"></h5>
+
+  <label style="margin-top: 5%;">Card Number</label>
+  <input placeholder="e.g. 1234 5678 9123 0000" type="text" maxlength="19">
+  <h5 class="card-number" style="margin-top: 2%;"></h5>
+  
+  <div style="margin-top: 5%;" class="isti">
+     <div class="exp">
+  <label>Exp. Date (MM/YY)</label>
+  <div class="mmyy">
+  <input placeholder="MM" type="number" min="1" max="12">
+  <input placeholder="YY" type="number" min="22" max="99">
+</div>
+  <h5 style="margin-left:-30%;margin-top: 2%;"></h5>
+  <h5 style="margin-left:-30%;margin-top: 2%;"></h5>
+</div>
+
+<div class="cvc">
+  <label id="cvcid">CVC</label>
+  <input placeholder="e.g. 123" type="number" min="100" max="999" maxlength="3">
+  <h5 style="margin-left:-60%;margin-top: 1%;"></h5>
+</div>  
+</div>
+  <button><h2>Confirm</h2></button>
+
+</form>
+  <!-- Completed state start -->
+  <div class="drugiDesno">
+  <div class="complete">
+    <img src="images/icon-complete.svg" alt="ikona">
+    <h1>Thank you!</h1>
+    <h3>We've added your card details</h3>
+    <button><h2>Continue</h2></button>
+  </div>
+</div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+$light-grayish-violet:hsl(270, 3%, 87%);
+$dark-grayish-violet: hsl(279, 6%, 55%);
+$very-dark-violet: hsl(278, 68%, 11%);
+$red:hsl(0, 100%, 66%);
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+@mixin flexbox($direction,$pozicija){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $pozicija;
+    align-items: $pozicija;
+}
+body{
+    font-size: 18px;
+    @include flexbox(column, center);
+    min-height: 100vh;
+    background-image: url('images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: 55vh;
+}
+.container{
+    @include flexbox(row,center);
+    width:75rem;
+    height: 60vh;
+    h5{
+        color:$red;
+        display: none;
+    }
+    .levo{
+        @include flexbox(column,center);
+        width:60%;
+        .gornja,.donja{
+            width:440px;
+            height: 240px;
+            border-radius: 10px;
+            position: absolute;
+        }
+        .gornja{
+            z-index: 1;
+            @include flexbox(column,flex-end);
+            align-items: center;
+            background-image: url('images/bg-card-front.png');
+            margin-bottom: 3%;
+            left:10%;
+            top:20%;
+            color:white;
+            padding: 20px;
+            .ime{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 25px;
+                .name{
+                    margin-right: 160px;
+                }
+            }
+            h1,h3{
+                font-weight:lighter;
+            }
+            .circles{
+                @include flexbox(row,center);
+                position: absolute;
+                top:10%;
+                left:5%;
+                .veliki{
+                    border-radius: 50%;
+                    background-color: white;
+                    width:50px;
+                    height: 50px;
+                    margin-right: 15px;
+                }
+                .mali{
+                    background: transparent;
+                    width: 20px;
+                    height: 20px;
+                    border:1px solid white;
+                    border-radius: 50%;
+                }
+            }
+        }   
+        .donja{
+            z-index: 2;
+            background-image: url('images/bg-card-back.png');
+            left:17%;
+            top:50%;
+            span{
+                position: absolute;
+                left:80%;
+                top:45%;
+                color:white;
+            }
+        }
+    }
+    .complete,.desno{
+        width:45%;
+    }
+    button{
+        background-color: $very-dark-violet;
+        color:white;
+        width:100%;
+        height: 60px;
+        margin-top: 7%;
+        h2{
+            letter-spacing: 0.1rem;
+        }
+    }
+    input,button{
+        border-radius: 10px;
+    }
+    .desno{
+        @include flexbox(column,flex-start);
+        .isti{
+            @include flexbox(row,center);
+            .exp,.cvc{
+                @include flexbox(column,center);
+            }
+            .mmyy{
+                @include flexbox(row,center);
+                input{
+                    width:75px;
+                    margin-right: 15px;
+                }
+            }
+            .cvc{
+                input{
+                    width:320px;
+                }
+                #cvcid{
+                    margin-bottom: 3%;
+                }
+            }
+        }
+        input{
+            width:100%;
+            height: 50px;
+            padding-left: 3%;
+            font-size: 15pt;
+            border:1px solid $light-grayish-violet;
+            &:active{
+                border-color:hsl(249, 99%, 64%);
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        label{
+            margin-bottom: 2%; 
+            color:$very-dark-violet; 
+        }
+    }
+    .complete{
+        @include flexbox(column,flex-start);
+        img{
+            margin-left: 100%;
+        }
+        h1{
+            color:$very-dark-violet;
+            font-weight: 300;
+            letter-spacing: 0.4rem;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            width:16vw;
+            margin-left: 63%;
+        }   
+        h3{
+            color:$dark-grayish-violet;
+            font-weight: 100;
+            margin-bottom: 20px;
+            width: 19vw;
+            margin-left: 50%;
+        }
+    }
+    .drugiDesno{
+        display: none;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:375px){
+    .container{
+        height: 100%;
+        width:100%;
+        @include flexbox(column,center);
+        .levo,.desno{
+            width:90%;
+        }
+        .levo{
+            height: 40%;
+            .gornja{
+                z-index: 2;
+                margin-left: -22%;
+                margin-top: -18%;
+             }
+             .donja{
+                margin-top: -110%;
+                margin-left: -15%;
+                z-index: 1;
+             }
+        }
+        .desno{
+            height: 60%;
+            margin-top: 70%;
+        }
+        .drugiDesno{
+            margin-top: 70%;
+            width: 100%;
+            .complete{
+                width: 100%;
+                img{
+                    margin-left: 40%;
+                }
+                h1{
+                    width: 100%;
+                    margin-left: 15%;
+                }
+                h3{
+                    width:100%;
+                    margin-left: 10%;
+                }
+            }
+        }
+    }
+    body{
+        background-image: url('images/bg-main-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100vw;
+    }
+    .gornja,.donja{
+        transform: scale(0.7);
+        width:340px;
+        height: 140px;
+        border-radius: 10px;
+        position: absolute;
+    }
+    .exp{
+        width:50%;
+    }
+    .cvc{
+        width:50%;
+        input{
+            margin-left: 80%;
+        }
+    }
+}
